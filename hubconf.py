@@ -72,7 +72,9 @@ def merge_configs(cfg1, cfg2):
 
 def posenet(arch='litehrnet_30_coco_384x288'):
     assert arch in ARCH, f"{arch} not supported, try one of {ARCH}"
-    prefix = 'configs/top_down/lite_hrnet'
+    from pathlib import Path
+    CWD = Path(__file__).parent
+    prefix = CWD / 'configs/top_down/lite_hrnet'
     dataset = 'coco' if 'coco' in arch else 'mpii'
     cfg = Config.fromfile(f"{prefix}/{dataset}/{arch}.py")
     model = build_posenet(cfg.model)
