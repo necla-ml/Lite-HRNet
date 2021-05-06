@@ -78,4 +78,5 @@ def posenet(arch='litehrnet_30_coco_384x288'):
     dataset = 'coco' if 'coco' in arch else 'mpii'
     cfg = Config.fromfile(f"{prefix}/{dataset}/{arch}.py")
     model = build_posenet(cfg.model)
+    model.cfg = cfg
     return model
