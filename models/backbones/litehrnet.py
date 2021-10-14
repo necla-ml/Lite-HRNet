@@ -9,7 +9,6 @@ import torch.utils.checkpoint as cp
 
 import mmcv
 from mmpose.utils import get_root_logger
-from mmpose.models.registry import BACKBONES
 from mmpose.models.backbones.resnet import BasicBlock, Bottleneck
 from mmpose.models.backbones.utils import load_checkpoint, channel_shuffle
 
