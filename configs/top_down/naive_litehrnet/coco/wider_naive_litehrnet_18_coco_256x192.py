@@ -64,7 +64,7 @@ model = dict(
             with_head=True,
             )),
     keypoint_head=dict(
-        type='TopDownSimpleHead',
+        type='TopdownHeatmapSimpleHead',
         in_channels=40,
         out_channels=channel_cfg['num_output_channels'],
         num_deconv_layers=0,
@@ -77,7 +77,7 @@ model = dict(
         shift_heatmap=True,
         unbiased_decoding=False,
         modulate_kernel=11),
-    loss_pose=dict(type='JointsMSELoss', use_target_weight=True))
+    loss_keypoint=dict(type='JointsMSELoss', use_target_weight=True))
 
 data_cfg = dict(
     image_size=[192, 256],
