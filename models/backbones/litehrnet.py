@@ -643,7 +643,7 @@ class LiteHRModule(nn.Module):
         return out
 
 
-@BACKBONES.register_module()
+# @BACKBONES.register_module()
 class LiteHRNet(nn.Module):
     """Lite-HRNet backbone.
 
